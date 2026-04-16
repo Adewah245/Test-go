@@ -24,5 +24,39 @@ A way to describe patterns in text.
 mostly used in regexp:
 [] () \s . ? + $ *
 ```
+# processor.go
+```go
+package main
+
+import "strings"
+
+func processor(s string) string {
+	line := strings.Split(s, "\n")
+	for i := 0; i < len(line); i++ {
+		line[i] = applycase(line[i])
+		line[i] = atoan(line[i])
+		line[i] = convert(line[i])
+		line[i] = fixpuct(line[i])
+		line[i] = lastnword(line[i])
+		line[i] = fixquote(line[i])
+	}
+	return strings.Join(line, "\n")
+}
+```
+# fixquote.go
+```go
+package main
+
+import "regexp"
+
+func fixquote(s string) string {
+	single := regexp.MustCompile(`'\s+(.*?)\s+'`)
+	s = single.ReplaceAllString(s, `'$1'`)
+	second := regexp.MustCompile(`"\s+(.*?)\s+"`)
+	s = second.ReplaceAllString(s, `"$1"`)
+
+	return s
+}
+```
 
 
