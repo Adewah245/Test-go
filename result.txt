@@ -1,28 +1,5 @@
-```md
-# Regular expression = (regexp)
-***meaning**
-A way to describe patterns in text.
-
-**symbols  and their meaning**
-1. dot (.) simply means every character
-2. * => means zero or more
-3. + => means one or more
-4. ? => 0 or 1 time
-5. [] => character set. (one of these)
-6. () => group parts
-7. | => OR
-8. {n} => exact repeat
-9. {n,m} => range repeat
-10. ^  => start of text
-11. $ => end of text
-12. \ => escape / special meaning
-13. \d => digit
-14. \s => space
-15. \b => boundary
-```
-```txt
-mostly used in regexp:
-[] () \s . ? + $ *
-```
-
-
+It was the best of times, it was the worst of TIMES, it was the age of wisdom, it was the age of foolishness it was the epoch of belief, it was the epoch of incredulity, it was the season of Light, it was the season of darkness, it was the spring of hope, it was the winter of despair.
+Simply add 66 and 2 and you will see the result is 68.
+There is no greater agony than bearing an untold story inside you.
+Punctuation tests are... kinda boring, what do you think?
+"'hello world'"
