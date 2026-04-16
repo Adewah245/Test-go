@@ -1,10 +1,15 @@
 package main
 
+import "strings"
+
 func processor(s string) string {
-	s = applycase(s)
-	s = lastnword(s)
-	s = convert(s)
-	s = atoan(s)
-	s = fixpuct(s)
+	line := strings.Split(s, "\n")
+	for i:= 0; i < len(line); i++{
+		line[i] = applycase(line[i])
+		line[i] = atoan(line[i])
+		line[i] = convert(line[i])
+		line[i] = fixpuct(line[i])
+		line[i] = lastnword(line[i])
+	}
 	return s
 }

@@ -11,13 +11,10 @@ func main() {
 		os.Exit(1)
 	}
 
-	data, err := os.ReadFile(os.Args[1])
-	if err != nil {
-		fmt.Println("Erro Reading File", err)
-		os.Exit(1)
-	}
+	data, _ := os.ReadFile(os.Args[1])
 
 	result := processor(string(data))
-	err = os.WriteFile(os.Args[2], []byte(result), 0644)
+
+	os.WriteFile(os.Args[2], []byte(result), 0644)
 	fmt.Println(result)
 }
